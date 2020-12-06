@@ -1,16 +1,16 @@
 import React from "react";
-import { Switch, Route } from "react-router-dom";
+import { Switch } from "react-router-dom";
 
 import GeneralLayout from "./shared/layouts/GeneralLayout";
 import routes from "./routes";
 
-
 function App() {
+
   return (
     <Switch>
       {
         routes.map(el => {
-          const Route = el.route || Route
+          const Route = el.route || Switch
 
           return (
             <Route
