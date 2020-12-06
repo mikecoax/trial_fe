@@ -51,7 +51,9 @@ function Home({ events, eventAction }) {
 
   useEffect(() => {
     const rawData = searchedValue ?
-      events.filter(e => e.type.includes(searchedValue)) :
+      events.filter(e => e.type?.includes(searchedValue) ||
+        e.traits?.name?.includes(searchedValue) ||
+        e.properties?.path?.includes(searchedValue)) :
       events;
 
     setData(rawData.map((d, id) => {
